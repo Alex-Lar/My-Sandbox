@@ -1,160 +1,143 @@
-.nav {
-    font-family: 'Poppins', sans-serif;
-}
-
-.nav-inner {
-    padding: 30px 12px;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-}
-
 .container {
     margin: 0 auto;
-    max-width: 1320px;
+    max-width: 1100px;
     width: 100%;
 }
 
-.nav-brand img {
-    max-width: 100%;
-    height: auto;
-}
-
-.nav-links {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-}
-
-.links {
-    display: flex;
-    align-items: center;
-    gap: 50px;
-}
-
-.links-item {
-    font-size: 16px;
-    font-weight: 400;
-}
-
-/* Styles */
-.link {
-    color: #646A89;
-    transition: color .2s ease;
-}
-
-.link:hover {
-    color: #3c425f;
-}
-
-.link-button {
-    margin-left: 30px;
-    padding: 18px 34px;
-    border-radius: 6px;
-    background-color: #BF0830;
-
-    font-weight: 500;
+.nav {
+    padding: 25px 12px;
+    font-family: 'Playfair Display', serif;
+    background-color: #333;
     color: white;
-    transition: background-color .2s ease;
 }
 
-.link-button:hover {
-    background-color: #a9072b;
+.nav-inner {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    overflow-y: hidden;
 }
 
-.link-button:focus {
-    outline: 3px solid #eb416656;
-    background-color: #970726;
+.nav-logo {
+    font-size: 40px;
+    font-weight: 500;
+} 
+
+.nav-menu {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 60px;
+
+    font-size: 20px;
+    font-weight: normal;
+    transition: all .2s linear;
+} 
+
+.menu-item a {
+    text-decoration: none;
+    color: rgb(206, 206, 206);
+    transition: all .3s ease;
+} 
+
+.menu-item a:hover {
+    color: #fff;
+} 
+
+.hamburger {
+    display: none;
+    cursor: pointer;
 }
 
+.hamburger.active span:nth-child(1) {
+    transform: translateY(6px) rotate(45deg);
+}
 
-.nav-label {
+.hamburger.active span:nth-child(2) {
     display: none;
 }
 
+.hamburger.active span:nth-child(3) {
+    transform: translateY(-6px) rotate(-45deg);
+}
+
+.hamburger span {
+    background-color: #fff;
+    width: 32px;
+    height: 4px;
+    transition: all .2s linear;
+}
+
+
+
 
 /* Media Querys */
-
-@media (max-width: 1399px) {
+@media (max-width: 1199px) {
     .container {
-        max-width: 1140px;
+        max-width: 980px;
     }
 }
 
-@media (max-width: 1199px) {
+@media (max-width: 992px) {
     .container {
-        max-width: 960px;
+        max-width: 720px;
     }
 }
 
 
 /** На этой точке первые три ссылки исчезают */
-/** Остаеться только красная кнопка и кнопка бургер меню */
-@media (max-width: 992px) {
-    .container {
-        max-width: 720px;
-    }
-
-    .link-button {
-        padding: 14px 27px;
-    }
-
-    .links {
-        display: none;
-    }
-
-    /* Burger Menu */
-    .nav-label {
-        display: block;
-        position: relative;
-        margin-left: 15px;
-        padding: 7px 13px;
-        cursor: pointer;
-    }
-
-    .nav-checkbox {
-        position: absolute;
-        visibility: hidden;
-    }
-
-    .nav-checkbox:checked~.burger-wrapper {
-        background-color: #1a25780c;
-        outline: 3px solid rgba(77, 119, 255, 0.212);
-    }
-
-    .nav-icon {
-        font-size: 30px;
-        color: #1A2578;
-        background-color: white;
-    }
-
-    .burger-wrapper {
-        position: absolute;
-        top: 0;
-        left: 0;
-        right: 0;
-        bottom: 0;
-        z-index: 0;
-        border: 1px solid #1a257843;
-        border-radius: 6px;
-    }
-}
-
-
 @media (max-width: 767px) {
     .container {
         max-width: 540px;
     }
+
+    .nav-menu.hide {
+        padding-top: 1rem;
+        padding-bottom: 1rem;
+
+        position: fixed;
+        top: -7rem;
+        left: 0;
+        z-index: -1;
+
+        flex-direction: column;
+        gap: 50px;
+
+        background-color: #333;
+        width: 100%;
+    }
+
+    .nav-menu.show {
+        padding-top: 5rem;
+        padding-bottom: 2.5rem;
+
+        position: fixed;
+        top: 30px;
+        left: 0;
+        z-index: -1;
+
+        flex-direction: column;
+        gap: 50px;
+
+        background-color: #333;
+        width: 100%;
+    }
+
+    .hamburger {
+        display: flex;
+        flex-direction: column;
+        gap: 8px;
+    }
 }
+
 
 /** На этой точке красная кнопка исчезает */
 /** Остается только кнопка бургер меню */
 @media (max-width: 575px) {
+    .nav {
+        padding: 25px 25px;
+    }
     .container {
         max-width: 560px;
-    }
-
-    .link-button {
-        display: none;
     }
 }
