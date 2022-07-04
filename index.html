@@ -8,22 +8,24 @@
     <script src="https://kit.fontawesome.com/5d73d7886d.js" crossorigin="anonymous"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat&family=Playfair+Display:wght@400;500&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat&family=Playfair+Display:wght@400;500&display=swap"
+        rel="stylesheet">
     <link rel="stylesheet" href="assets/css/reset.css">
-    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="assets/css/navbar.css">
     <title>My Sandbox</title>
 </head>
 
 <body>
-    <nav class="nav">
+    <!--? First Navbar -->
+    <nav class="nav first" id="navbar-first">
         <div class="container">
-            <div class="nav-inner">
-                <h1 class="nav-logo">SANDBOX</h1>
+            <div class="nav__inner first">
+                <h1 class="nav__logo">SANDBOX</h1>
 
-                <ul class="nav-menu hide">
-                    <li class="menu-item"><a href="#">About</a></li>
-                    <li class="menu-item"><a href="#">Products</a></li>
-                    <li class="menu-item"><a href="#">Contact</a></li>
+                <ul class="nav__menu hide">
+                    <li class="menu__item"><a href="#">About</a></li>
+                    <li class="menu__item"><a href="#">Products</a></li>
+                    <li class="menu__item"><a href="#">Contact</a></li>
                 </ul>
 
                 <div class="hamburger">
@@ -35,18 +37,55 @@
         </div>
     </nav>
 
+
+
+
+    <!--? Second Navbar -->
+    <nav class="nav second d-none" id="navbar-second">
+        <div class="container">
+
+            <ul class="nav__inner second">
+                <li class="lists__item">
+                    <a href="#">Home</a>
+                </li>
+                <li class="lists__item blog">
+                    <a href="#" id="blog-drop">Blog</a>
+                    <ul class="lists__dropdown d-none"  id="blog-dropdown">
+                        <li><a href="#">HTML</a></li>
+                        <li><a href="#">Design</a></li>
+                    </ul>
+                </li>
+                <li class="lists__item work">
+                    <a href="#" id="work-drop">Work</a>
+                    <ul class="lists__dropdown d-none" id="work-dropdown">
+                        <li><a href="#">Web Design</a></li>
+                        <li><a href="#">Typography</a></li>
+                        <li><a href="#">Front-End</a></li>
+                    </ul>
+                </li>
+                <li class="lists__item">
+                    <a href="#">About</a>
+                </li>
+            </ul>
+
+        </div>
+    </nav>
+
+
+
+    <!--? Radio Buttons -->
     <section class="section">
         <div class="container">
             <h2 class="section-title">Choose Navbar</h2>
             <div class="radio-buttons">
-                <!-- #1 -->
+             
                 <label class="radio-item red" for="first-nav">
                     <input type="radio" class="radio" name="radio" id="first-nav" checked>
                     <div class="fake red"></div>
                     <div class="text">1st navbar</div>
                     <div class="border red"></div>
                 </label>
-                <!-- #2 -->
+               
                 <label class="radio-item" for="second-nav">
                     <input type="radio" class="radio" name="radio" id="second-nav">
                     <div class="fake blue"></div>
